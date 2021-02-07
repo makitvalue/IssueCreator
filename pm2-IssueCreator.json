@@ -1,0 +1,12 @@
+{
+	"name": "IssueCreator",
+        "script": "bin/www",
+        "watch": true,
+        "watch_delay": 0,
+        "ignore_watch": ["node_modules", ".git", "public/images", "upload"],
+        "watch_options": {
+                "followSymlinks": false
+        }
+}
+
+
