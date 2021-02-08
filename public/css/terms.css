@@ -1,0 +1,71 @@
+.wrapper.terms {
+    width: 800px;
+    margin: 0 auto;
+    padding: 64px 0;
+    max-width: 96%;
+}
+
+.wrapper.terms .title-wrapper {
+    text-align: center;
+    font-size: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 32px 0;
+}
+.wrapper.terms .title-wrapper img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+}
+.wrapper.terms .title-wrapper p {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 0 16px;
+}
+.wrapper.terms .terms-wrapper {
+    margin-top: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 32px;
+}
+.wrapper.terms .terms-wrapper p {
+    margin: 16px 0 0 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.2rem;
+}
+.wrapper.terms .terms-wrapper p:first-child {
+    margin-top: 0;
+}
+.wrapper.terms .terms-wrapper p.center {
+    text-align: center;
+}
+.wrapper.terms .terms-wrapper p.bold {
+    font-weight: 700;
+}
+.wrapper.terms .terms-wrapper p.subject {
+    font-weight: 900;
+}
+.wrapper.terms .terms-wrapper .content {
+    margin-top: 64px;
+}
+.wrapper.terms .terms-wrapper .content:first-child {
+    margin-top: 0;
+}
+.wrapper.terms .terms-wrapper .content ul {
+    margin: 16px 0 0 0;
+    list-style: none;
+    padding: 0 16px;
+}
+.wrapper.terms .terms-wrapper .content ul li {
+    margin-top: 16px;
+}
+.wrapper.terms .terms-wrapper .content ul p {
+    margin-top: 8px;
+}
+.wrapper.terms .terms-wrapper .content ul p:first-child {
+    margin-top: 0;
+}

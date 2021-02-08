@@ -1,0 +1,111 @@
+.wrapper.main {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 64px 0;
+    max-width: 96%;
+}
+
+.wrapper.main .project-list {
+    font-size: 0;
+}
+.wrapper.main .project-list .project {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    height: 240px;
+    border-radius: 4px;
+    margin-left: 4%;
+    margin-top: 4%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    font-size: 0;
+    overflow: hidden;
+
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+.wrapper.main .project-list .project:hover {
+    box-shadow: 0 2px 6px rgb(0 0 0 / 12%), 0 2px 4px rgb(0 0 0 / 24%);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+}
+.wrapper.main .project-list a:nth-child(2n-1) .project {
+    margin-left: 0;
+}
+.wrapper.main .project-list a:nth-child(1) .project,
+.wrapper.main .project-list a:nth-child(2) .project {
+    margin-top: 0;
+}
+
+.wrapper.main .project-list .project .image-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+    padding: 0 16px;
+}
+.wrapper.main .project-list .project .image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+.wrapper.main .project-list .project .desc-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    height: 100%;
+    border-left: 1px solid #DFDFDF;
+    padding-left: 16px;
+    position: relative;
+}
+.wrapper.main .project-list .project .desc-wrapper .cnt {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 8px;
+    border-bottom: 1px solid #DFDFDF;
+    text-align: right;
+}
+.wrapper.main .project-list .project .desc-wrapper .cnt i {
+    margin-right: 2px;
+}
+.wrapper.main .project-list .project .desc-wrapper .cnt i.fa-user {
+    color: #01d89d;
+}
+.wrapper.main .project-list .project .desc-wrapper .cnt i.fa-heart {
+    color: #FE4A49;
+    margin-left: 8px;
+}
+.wrapper.main .project-list .project .desc-wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 8px 0 0 0;
+    text-align: center;
+}
+.wrapper.main .project-list .project .desc-wrapper .desc { 
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 8px 0 0 0;
+}
+.wrapper.main .project-list .project .desc-wrapper .tag-list {
+    font-size: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 8px;
+    padding: 0 16px;
+}
+.wrapper.main .project-list .project .desc-wrapper .tag-list .tag {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin: 4px 4px 0 0;
+    padding: 2px 4px;
+    background: #EFEFEF;
+}
+.wrapper.main .project-list .project .desc-wrapper .tag-list .tag:last-child {
+    margin: 4px 0 0 0;
+}
