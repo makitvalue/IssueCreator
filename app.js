@@ -43,6 +43,26 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
+//robots.txt 설정
+app.get('/robots.txt', (req, res) => {
+    res.status(200).sendFile(__dirname + '/robots.txt');
+});
+
+//애드센스 ads.txt
+app.get('/ads.txt', (req, res) => {
+    res.status(200).sendFile(__dirname + '/ads.txt');
+});
+
+//소유권인증
+// app.get('/google1ab6e35cae7207bd.html', (req, res) => {
+//     res.status(200).sendFile(__dirname + '/google1ab6e35cae7207bd.html');
+// })
+
+//sitemap
+app.get('/sitemap.xml', (req, res) => {
+    res.status(200).sendFile(__dirname + '/sitemap.xml');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
