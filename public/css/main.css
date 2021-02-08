@@ -84,7 +84,7 @@
     margin: 8px 0 0 0;
     text-align: center;
 }
-.wrapper.main .project-list .project .desc-wrapper .desc { 
+.wrapper.main .project-list .project .desc-wrapper .desc {
     font-size: 0.9rem;
     font-weight: 300;
     margin: 8px 0 0 0;
@@ -108,4 +108,8 @@
 }
 .wrapper.main .project-list .project .desc-wrapper .tag-list .tag:last-child {
     margin: 4px 0 0 0;
+}
+
+.wrapper.main .adsense {
+    margin-top: 64px;
 }

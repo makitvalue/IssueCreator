@@ -9,6 +9,18 @@
     <meta name="keywords"  content="" />
     <meta name="theme-color" content="#333333">
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PL2WPHH');</script>
+    <!-- End Google Tag Manager -->
+    <!-- 네이버 검색 & 구글 애드센스 -->
+    <meta name="naver-site-verification" content="64abd96e7298e4d7f2f5bba00c683212a754b913" />
+    <!-- G suite  -->
+    <meta name="google-site-verification" content="6q2z3wagJm-54ZnSwY5UoAfIDQdwziIXu6dB6gqqNcQ" />
+
     <title><%= title %></title>
     <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon.ico">
 	<link rel="apple-touch-icon" sizes="60x60" href="/img/favicon.ico">
@@ -38,6 +50,12 @@
     <% } else if (menu == 'youduck' || menu == 'youduck_login' || menu == 'youduck_rank' || menu == 'youduck_doppel') { %>
         <link rel="stylesheet" type="text/css" href="/css/youduck.css" />
     <% } %>
+
+    <script data-ad-client="ca-pub-2589455479887760" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PL2WPHH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 </head>
 <body>
     <input class="js-input-hidden-menu" type="hidden" value="<%= menu %>" />

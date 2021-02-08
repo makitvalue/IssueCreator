@@ -279,3 +279,7 @@
     color: #EE1C23;
     background: #EFEFEF;
 }
+
+.wrapper.youduck .adsense {
+    margin-top: 64px;
+}

@@ -142,3 +142,9 @@ footer .wrapper .terms-wrapper a {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.adsense .wrapper {
+	width: 1024px;
+	max-width: 100%;
+	margin: 0 auto;
+}
