@@ -138,31 +138,36 @@ router.get('/login/callback', async (req, res) => {
                 params = [yuId];
                 await pool.query(query, params);
 
-                // 채널, 구독정보 추가
-                let ycQuery = "INSERT IGNORE INTO t_youduck_channels (yc_id, yc_name) VALUES";
-                let ycParams = [];
-                let ysQuery = "INSERT INTO t_youduck_subscriptions (ys_yu_id, ys_yc_id) VALUES";
-                let ysParams = [];
-                for (let i = 0; i < channelList.length; i++) {
-                    let channel = channelList[i];
+                console.log("channelList Length :", channelList.length);
+                console.log("channelList Length :", channelList.length);
+                console.log("channelList Length :", channelList.length);
 
-                    if (i > 0) {
-                        ycQuery += ",";
-                        ysQuery += ",";
+                if (channelList.length > 0) {
+                    // 채널, 구독정보 추가
+                    let ycQuery = "INSERT IGNORE INTO t_youduck_channels (yc_id, yc_name) VALUES";
+                    let ycParams = [];
+                    let ysQuery = "INSERT INTO t_youduck_subscriptions (ys_yu_id, ys_yc_id) VALUES";
+                    let ysParams = [];
+                    for (let i = 0; i < channelList.length; i++) {
+                        let channel = channelList[i];
+
+                        if (i > 0) {
+                            ycQuery += ",";
+                            ysQuery += ",";
+                        }
+
+                        ycQuery += " (?, ?)";
+                        ycParams.push(channel.id, channel.name);
+
+                        ysQuery += " (?, ?)";
+                        ysParams.push(yuId, channel.id);
                     }
-
-                    ycQuery += " (?, ?)";
-                    ycParams.push(channel.id, channel.name);
-
-                    ysQuery += " (?, ?)";
-                    ysParams.push(yuId, channel.id);
+                    console.log("ycQuery : ", ycQuery);
+                    console.log("ysQuery : ", ysQuery);
+                    await pool.query(ycQuery, ycParams);
+                    await pool.query(ysQuery, ysParams);
                 }
-                console.log("ycQuery : ", ycQuery);
-                console.log("ysQuery : ", ysQuery);
-
-                await pool.query(ycQuery, ycParams);
-                await pool.query(ysQuery, ysParams);
-
+                
                 req.session.isYuLogined = true;
                 req.session.yuId = yuId;
                 req.session.save(function() {
