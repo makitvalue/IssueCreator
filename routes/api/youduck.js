@@ -157,6 +157,9 @@ router.get('/login/callback', async (req, res) => {
                     ysQuery += " (?, ?)";
                     ysParams.push(yuId, channel.id);
                 }
+                console.log("ycQuery : ", ycQuery);
+                console.log("ysQuery : ", ysQuery);
+
                 await pool.query(ycQuery, ycParams);
                 await pool.query(ysQuery, ysParams);
 
