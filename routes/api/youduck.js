@@ -138,11 +138,7 @@ router.get('/login/callback', async (req, res) => {
                 params = [yuId];
                 await pool.query(query, params);
 
-                console.log("channelList Length :", channelList.length);
-                console.log("channelList Length :", channelList.length);
-                console.log("channelList Length :", channelList.length);
-
-                if (channelList.length > 0) {
+                if (channelList.length > 0) { // 구독한 채널 있을때
                     // 채널, 구독정보 추가
                     let ycQuery = "INSERT IGNORE INTO t_youduck_channels (yc_id, yc_name) VALUES";
                     let ycParams = [];

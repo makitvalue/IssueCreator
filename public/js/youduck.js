@@ -54,6 +54,8 @@ function getYouduckDoppel() {
         if (response.status != 'OK') {
             alert('에러가 발생했습니다.');
             return;
+        } else if (response.status == "ERR_NO_SUBSCRIPTIONS") {
+            alert("구독한 채널이 없습니다.");
         }
 
 
