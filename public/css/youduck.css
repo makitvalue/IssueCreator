@@ -283,3 +283,13 @@
 .wrapper.youduck .adsense {
     margin-top: 64px;
 }
+
+.wrapper.youduck ul.desc {
+    list-style: none;
+    padding: 0;
+    margin-top: 64px;
+}
+.wrapper.youduck ul.desc li {
+    padding: 8px 0;
+    font-size: 1rem;
+}

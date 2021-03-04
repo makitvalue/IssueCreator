@@ -3,6 +3,9 @@ var router = express.Router();
 const { isNone } = require('../../lib/common');
 const pool = require('../../lib/database');
 const { google } = require('googleapis');
+// const passport = require('passport');
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
 
 const googleConfig = {
     clientId: process.env.GOOGLE_OAUTH_CLIENT_ID,
@@ -17,6 +20,7 @@ const oauth2Client = new google.auth.OAuth2(
 );
 const url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
+    prompt: 'consent',
     scope: scopes
 });
 
@@ -26,6 +30,23 @@ async function googleLogin(code) {
     oauth2Client.setCredentials(tokens);
     return oauth2Client;
 }
+
+// router.get('/login', passport.authenticate('google', { scope: ['profile', 'https://www.googleapis.com/auth/youtube.readonly'] }));
+// router.get('/login/callback', passport.authenticate('google', { failureRedirect: '/project/youduck/login' }), (req, res) => {
+//     console.log(req.user);
+// });
+//
+// passport.use(new GoogleStrategy({
+//         clientID: process.env.GOOGLE_OAUTH_CLIENT_ID,
+//         clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
+//         callbackURL: process.env.GOOGLE_OAUTH_REDIRECT_URL
+//     },
+//     function(accessToken, refreshToken, profile, cb) {
+//         User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//             return cb(err, user);
+//         });
+//     }
+// ));
 
 
 // 유덕 로그인
@@ -43,7 +64,7 @@ router.get('/login', (req, res) => {
 router.get('/login/callback', async (req, res) => {
     try {
         let oauth2Client = await googleLogin(req.query.code);
-        
+
         let oauth2 = google.oauth2({
             auth: oauth2Client,
             version: 'v2'
@@ -163,7 +184,7 @@ router.get('/login/callback', async (req, res) => {
                     await pool.query(ycQuery, ycParams);
                     await pool.query(ysQuery, ysParams);
                 }
-                
+
                 req.session.isYuLogined = true;
                 req.session.yuId = yuId;
                 req.session.save(function() {
@@ -200,13 +221,13 @@ router.get('/get/rank', async (req, res) => {
             res.redirect('/youduck/login');
             return;
         }
-    
+
         let yuId = req.session.yuId;
 
         let query = "SELECT * FROM t_youduck_users WHERE yu_id = ?";
         let params = [yuId];
         let [result, fields] = await pool.query(query, params);
-    
+
         if (result.length == 0) {
             res.json({ status: 'ERR_NO_USER' });
             return;
@@ -267,7 +288,7 @@ router.get('/get/doppel', async (req, res) => {
             res.redirect('/youduck/login');
             return;
         }
-    
+
         let yuId = req.session.yuId;
 
         // 내 구독정보

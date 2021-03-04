@@ -36,14 +36,16 @@ router.get('/about', (req, res) => {
 
 // Youduck
 router.get('/youduck', (req, res) => {
-    if (!req.session.isYuLogined) {
-        res.redirect('/youduck/login');
-        return;
-    }
+    // if (!req.session.isYuLogined) {
+    //     res.redirect('/youduck/login');
+    //     return;
+    // }
 
     res.render('index', {
         menu: 'youduck',
-        title: '유덕(YouDuck) | 이슈크리에이터 - IssueCreator'
+        title: '유덕(YouDuck) | 이슈크리에이터 - IssueCreator',
+
+		isYuLogined: req.session.isYuLogined
     });
 });
 
