@@ -81,4 +81,13 @@ router.get('/youduck/doppel', (req, res) => {
 });
 
 
+router.get('/bridge', (req, res) => {
+	console.log('hi');
+	res.render('index', {
+        menu: 'bridge',
+        title: '이슈크리에이터 - IssueCreator'
+    });
+});
+
+
 module.exports = router;

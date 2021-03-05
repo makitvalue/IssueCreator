@@ -81,6 +81,8 @@
             <% include ./terms/agreement %>
         <% } else if (menu == 'about') { %>
             <% include ./about %>
+        <% } else if (menu == 'bridge') { %>
+            <% include ./bridge %>
 
         <% } else if (menu == 'youduck') { %>
             <% include ./youduck/main %>
@@ -111,6 +113,8 @@
         <script src="/js/main.js"></script>
     <% } else if (menu == 'youduck' || menu == 'youduck_login' || menu == 'youduck_rank' || menu == 'youduck_doppel') { %>
         <script src="/js/youduck.js"></script>
+    <% } else if (menu == 'bridge') { %>
+        <script src="/js/bridge.js"></script>
     <% } %>
 
 </body>

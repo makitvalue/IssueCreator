@@ -21,7 +21,7 @@ function getYouduckRank() {
             alert('에러가 발생했습니다.');
             return;
         }
-        
+
         let myRank = response.result.myRank;
         let mySubscriptionCnt = response.result.mySubscriptionCnt;
         let top5List = response.result.top5List;
@@ -58,7 +58,7 @@ function getYouduckDoppel() {
                 alert('에러가 발생했습니다.');
             }
             return;
-        }  
+        }
 
 
         let doppelName = response.result.doppelName;
@@ -86,6 +86,21 @@ function getYouduckDoppel() {
 
 
 function initYouduck() {
+    const agent = navigator.userAgent.toLowerCase();
+
+    if (agent.includes('iphone')) {
+        if (agent.includes('kakao')) {
+            alert('카카오톡 인앱 브라우저에서는 유덕을 이용하실 수 없습니다. 사파리 또는 크롬 브라우저를 이용해주세요. 죄송합니다.');
+        }
+
+    } else { // 안드로이드
+        if (agent.includes('kakao')) {
+            if (confirm('카카오톡 인앱 브라우저에서는 유덕을 이용하실 수 없습니다. 크롬 브라우저를 이용하여 다시 접속하시겠습니까?')) {
+                location.href = 'intent://issuecreator.net/youduck#Intent;scheme=http;package=com.android.chrome;end';
+            }
+        }
+    }
+
     if (menu == 'youduck_rank') {
         getYouduckRank();
     } else if (menu == 'youduck_doppel') {
@@ -110,7 +125,7 @@ function initYouduck() {
                     alert('에러가 발생했습니다.');
                     return;
                 }
-                
+
                 location.href = '/youduck/login';
             });
         });
