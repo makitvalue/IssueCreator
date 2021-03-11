@@ -58,7 +58,7 @@
     width: 60%;
     height: 100%;
     border-left: 1px solid #DFDFDF;
-    padding-left: 16px;
+    padding: 0 16px;
     position: relative;
 }
 .wrapper.main .project-list .project .desc-wrapper .cnt {
@@ -112,4 +112,19 @@
 
 .wrapper.main .adsense {
     margin-top: 64px;
+}
+
+
+@media (max-width: 800px) {
+    .wrapper.main .project-list .project {
+        width: 100%;
+        margin-left: 0;
+    }
+    /* .wrapper.main .project-list a:nth-child(2n-1) .project {
+        margin-left: 0;
+    }
+    .wrapper.main .project-list a:nth-child(1) .project,
+    .wrapper.main .project-list a:nth-child(2) .project {
+        margin-top: 0;
+    } */
 }
